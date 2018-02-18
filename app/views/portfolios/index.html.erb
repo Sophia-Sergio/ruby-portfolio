@@ -1,0 +1,11 @@
+<h1>Portfolio Items</h1>
+<%= notice %>
+<br>
+<% @portfolios.each do |portfolio| %>
+  <%= portfolio.title %> 
+  <%= portfolio.subtitle %> 
+  <%= portfolio.body %> 
+  <%= image_tag portfolio.thumb_image unless portfolio.thumb_image.nil? %> 
+  <%= link_to "destroy", portfolio_path(portfolio), method: "delete" %> 
+  <br>
+<% end %>

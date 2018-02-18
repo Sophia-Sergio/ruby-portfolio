@@ -1,0 +1,6 @@
+<%= form_with model: @portfolio, local: true do |f| %>
+  <%= f.text_field :title, placeholder: :title %>
+  <%= f.text_field :subtitle, placeholder: :subtitle %>
+  <%= f.text_field :body, placeholder: :body %>
+  <%= f.submit %>
+<% end %>
