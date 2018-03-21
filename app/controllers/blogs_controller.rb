@@ -1,19 +1,24 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: %i[show edit update destroy toogle_status]
+  access all: %I[show index],
+         user: { except: %I[destroy update new edit create toogle_status] },
+         site_admin: :all
+
+  layout 'blog'
 
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.all.sort
+    @blogs = Blog.page(params[:page]).per(5)
   end
-
   # GET /blogs/1
   # GET /blogs/1.json
-  def show() end
+  def show
+    @page = @blog.title
+  end
 
   # GET /blogs/new
   def new
-    @blog = Blog.new
   end
 
   # GET /blogs/1/edit
@@ -28,7 +33,6 @@ class BlogsController < ApplicationController
   # POST /blogs.json
   def create
     @blog = Blog.new(blog_params)
-
     respond_to do |format|
       if @blog.save
         format.html { redirect_to @blog, notice: 'Blog was successfully created.' }

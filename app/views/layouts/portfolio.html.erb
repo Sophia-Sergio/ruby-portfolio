@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog | <%= @page %></title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'portfolios', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  
+  <body>
+
+    <%= render 'shared/portfolio_nav' %>
+    <%= render 'shared/portfolio_masthead' unless logged_in?(:site_admin) %>
+    <%= render 'shared/navbar', location: 'top' %>    
+    <%= yield %>
+    <%= render 'shared/portfolio_footer' %>
+  </body>
+</html>

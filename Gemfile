@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use postgresql as the database for Active Record
@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -36,6 +36,7 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry-byebug'
 end
 
 group :development do
@@ -50,4 +51,16 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
-gem 'friendly_id', '~> 5.1.0'
+gem 'bootstrap', '~> 4.0.0'
+gem 'devise', '~> 4.4', '>= 4.4.1'
+gem 'friendly_id', '~> 5.1.0' # it uses binding.pry in controllers....  in views <% binding.pry %>
+gem 'jquery-rails'
+gem 'petergate', '~> 1.8', '>= 1.8.1'
+gem 'kaminari'
+gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
+gem 'carrierwave', '~>1.0'
+gem 'mini_magick', '~>4.6'
+gem 'carrierwave-aws', '~>1.0', '>= 1.0.2'
+gem 'dotenv-rails', '~>2.1', '>= 2.1.2'
+
+gem 'sergio_torres_gem'

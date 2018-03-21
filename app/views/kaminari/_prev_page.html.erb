@@ -1,0 +1,7 @@
+<% if current_page.first? %>
+  <%= link_to raw('&laquo; Newer'), url, class: 'disabled btn btn-outline-primary' %>
+  <%= link_to 'Previous', blogs_path(page: current_page - 1), class: 'disabled btn btn-outline-primary' %>
+<% else %>
+  <%= link_to raw('&laquo; Newer'), url, class: 'btn btn-outline-primary' %>
+  <%= link_to 'Previous', blogs_path(page: current_page - 1), class: 'btn btn-outline-primary' %>
+<% end %>

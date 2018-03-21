@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Portfolio</title>
+    <title>Portfolio | <%= @page %></title>
     <%= csrf_meta_tags %>
+    <meta name="turbolinks-cache-control" content="no-cache">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
+  
   <body>
+  <div class="cover-container d-flex h-100 p-3 mx-auto flex-column text-center">
+
+    <%= video_tag(
+      'HardDrivePhotojpeg.mp4',
+      id: 'background',
+      autoplay: true,
+      loop: true, 
+      muted: true,
+      control: false,
+      class: 'video-background'
+    )%>
+
+    <%= render 'shared/application_nav' %>                          
     <%= yield %>
+    <%= source_helper %>
+  </div>
   </body>
 </html>
