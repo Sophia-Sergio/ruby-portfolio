@@ -16,8 +16,13 @@
       </div>
     </div>
     <div class="col-md-6">
-      <%= f.file_field :main_image %>
-      <%= f.file_field :thumb_image %>
+      <label class="btn btn-primary">
+        Upload main image<%= f.file_field :main_image, style: 'display:none '%>
+      </label>
+      <label class="btn btn-primary">
+        Upload thumb image<%= f.file_field :thumb_image, style: 'display:none ' %>
+      </label>
+      
       <h2>Techonlogies Used:</h2>
       <ul>
         <%= f.fields_for :technologies do |e|%>

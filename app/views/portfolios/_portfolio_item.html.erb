@@ -1,9 +1,9 @@
 <div class="col-md-4">
   <div class="card mb-4 box-shadow" data-id="<%= portfolio_item.id %>">
-    <%= image_tag portfolio_item.thumb_image, class: "card-img-top" unless portfolio_item.thumb_image.nil? %> 
+    <%= image_tag portfolio_img(portfolio_item, 'thumb') %> 
     <div class="card-body">
-        <%= portfolio_item.title %> 
-        <%= portfolio_item.subtitle %> 
+      <%= portfolio_item.title %> 
+      <%= portfolio_item.subtitle %> 
       <p class="card-text"><%= portfolio_item.body %> </p>
       <div class="d-flex justify-content-between align-items-center">
         <div class="btn-group">

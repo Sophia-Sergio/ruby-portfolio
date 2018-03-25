@@ -9,17 +9,21 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.page(params[:page]).per(5)
+    @blogs = Blog.last_updated.page(params[:page]).per(5) if logged_in?(:site_admin)
+    @blogs = Blog.last_updated.published.page(params[:page]).per(5) unless logged_in?(:site_admin)
   end
   # GET /blogs/1
   # GET /blogs/1.json
+
   def show
+    @blog = Blog.includes(:comments).friendly.find(params[:id])
+    @comment = Comment.new
     @page = @blog.title
   end
 
   # GET /blogs/new
-  def new
-  end
+
+  def new() end
 
   # GET /blogs/1/edit
   def edit() end

@@ -64,3 +64,5 @@ gem 'carrierwave-aws', '~>1.0', '>= 1.0.2'
 gem 'dotenv-rails', '~>2.1', '>= 2.1.2'
 
 gem 'sergio_torres_gem'
+gem 'twitter'
+gem 'redis'
